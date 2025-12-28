@@ -47,7 +47,7 @@
         s3a://otus-bucket3-b1gukkncvsp3tvci7gp3/data
         
     
-![alt text](image)
+![alt text](image/spark_jobs.png)
 
 
 ![alt text](images/new_files.png)
