@@ -1,0 +1,34 @@
+yc_token                 = ""
+yc_cloud_id              = ""
+yc_folder_id             = ""
+yc_zone                  = "ru-central1-a"
+yc_instance_name         = "otus-proxy-vm"
+yc_image_id              = "fd808e721rc1vt7jkd0o" # Ubuntu 20.04 LTS
+yc_subnet_name           = "otus-subnet"
+yc_service_account_name  = "otus-sa"
+yc_source_bucket_name    = "otus-bucket2"
+yc_bucket_name           = "otus-bucket3"
+yc_network_name          = "otus-network"
+yc_route_table_name      = "otus-route-table"
+yc_nat_gateway_name      = "otus-nat-gateway"
+yc_security_group_name   = "otus-security-group"
+yc_subnet_range          = "10.0.0.0/24"
+yc_dataproc_cluster_name = "otus-dataproc-cluster"
+yc_dataproc_version      = "2.0"
+public_key_path          = "~/.ssh/hw2_mlops.pub"
+public_key_path_mn       = "~/.ssh/hw2_mlops2.pub"
+
+dataproc_master_resources = {
+    resource_preset_id = "s3-c2-m8"
+    disk_type_id       = "network-ssd"
+    disk_size          = 40
+}
+
+dataproc_data_resources = {
+    resource_preset_id = "s3-c4-m16"
+    disk_type_id       = "network-ssd"
+    disk_size          = 128
+}
+
+proxy_ip_address = "10.0.0.100"
+#proxy_user_name = "ubuntu"

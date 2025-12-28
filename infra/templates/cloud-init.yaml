@@ -1,0 +1,33 @@
+
+#cloud-config
+datasource:
+  Ec2:
+    strict_id: false
+ssh_pwauth: no
+users:
+  - name: ubuntu
+    sudo: 'ALL=(ALL) NOPASSWD:ALL'
+    shell: /bin/bash
+    ssh_authorized_keys:
+      ${public_key}
+write_files:
+  - path: "/home/ubuntu/.ssh/dataproc_key"
+    permissions: "755"
+    owner: ubuntu:ubuntu
+    content: ${cluster_key}
+    encoding: b64
+    defer: true
+  - path: "/home/ubuntu/scripts/upload_data_to_hdfs.sh"
+    permissions: "755"
+    owner: ubuntu:ubuntu
+    content: |
+      ${upload_data_to_hdfs_sh}
+    defer: true
+  - path: "/home/ubuntu/scripts/user_data.sh"
+    permissions: "755"
+    owner: ubuntu:ubuntu
+    content: |
+      ${user_data_sh}
+    defer: true
+runcmd:
+  - [ "/home/ubuntu/scripts/user_data.sh", "${token}", "${cloud_id}", "${folder_id}", "${access_key}", "${secret_key}", "${source_bucket}" ]

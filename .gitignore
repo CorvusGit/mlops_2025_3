@@ -1,0 +1,10 @@
+terraform.tfvars
+*.tfstate
+*.tfstate.backup
+*.tfstate.backup.*
+*.tfplan
+.terraform
+*.info
+*.log
+no_git/
+notebooks/.ipynb_checkpoints/
