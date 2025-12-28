@@ -33,7 +33,7 @@
         --s3-bucket-path s3a://otus-bucket3-b1gukkncvsp3tvci7gp3/data \
         --log-stats
     
-        соответственно паркет запсиывается в 3a://otus-bucket3-b1gukkncvsp3tvci7gp3/data
+        соответственно паркет запсиывается в s3a://otus-bucket3-b1gukkncvsp3tvci7gp3/data
 
 6 Запускал скрипт на кластере: s3-c4-m16 + 3 х s3-c8-m32. 
     Лог очистки:
@@ -42,6 +42,8 @@
     то есть удалено 27252 + 2553 =  29805 строк ,
     оставлены со спец значнеием (-1) 14623 некорректных customer_id и 13060 некорректных terminal_id 
     (проверил на новом датасете - количество удаленных сходится)
+
+
 
     Очищеный датасет:
         s3a://otus-bucket3-b1gukkncvsp3tvci7gp3/data
